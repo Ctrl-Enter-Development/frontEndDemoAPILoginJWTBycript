@@ -27,10 +27,16 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": ["src/env.js"]
           },
           "configurations": {
             "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
               "budgets": [
                 {
                   "type": "initial",
@@ -89,10 +95,13 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": ["src/env.js"]
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "f10bc851-c5b5-459e-b9f4-5c48db177eae"
   }
 }
