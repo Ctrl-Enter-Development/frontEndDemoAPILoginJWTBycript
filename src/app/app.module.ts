@@ -3,27 +3,30 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './components/login/login.component';
+import { SignupComponent } from './components/signup/signup.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
-import { LoginUserComponent } from './login-user/login-user.component';
-import { RegisterUserComponent } from './register-user/register-user.component';
-import { EditionUserComponent } from './edition-user/edition-user.component';
-import { DeleteUserComponent } from './delete-user/delete-user.component';
-import { WelcomePageComponent } from './welcome-page/welcome-page.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginUserComponent,
-    RegisterUserComponent,
-    EditionUserComponent,
-    DeleteUserComponent,
-    WelcomePageComponent,
-    
+    LoginComponent,
+    SignupComponent,
+    DashboardComponent,
+    ProfileComponent,
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
