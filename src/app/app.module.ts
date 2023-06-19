@@ -10,7 +10,7 @@ import { SignupComponent } from './components/signup/signup.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfileComponent } from './components/profile/profile.component';
 
-
+import { AuthService } from './services/auth.service';
 
 
 @NgModule({

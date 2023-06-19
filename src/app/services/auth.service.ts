@@ -1,7 +1,8 @@
+// auth.service.ts
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
-import { catchError, map } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { tap } from 'rxjs/operators';
 import { CookieService } from 'ngx-cookie-service';
 
 @Injectable({
@@ -13,31 +14,29 @@ export class AuthService {
 
   constructor(private http: HttpClient, private cookieService: CookieService) {}
 
-  isAuthenticated(): Observable<boolean> {
-    // Verifique se o usuário está autenticado
+  login(email: string, password: string): Observable<any> {
+    const payload = { email, password };
+    return this.http.post<any>(`${this.apiUrl}/login`, payload).pipe(
+      tap(response => {
+        if (response.token) {
+          this.setAuthToken(response.token); // Armazena o token no cookie se estiver presente na resposta
+        }
+      })
+    );
+  }
+
+  isAuthenticated(): boolean {
     const token = this.cookieService.get(this.tokenCookieName); // Obtenha o token do cookie
-
-    if (token) {
-      // Token encontrado, faça uma verificação na API para validar o token
-      const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-
-      return this.http.get<any>(`${this.apiUrl}/validateToken`, { headers }).pipe(
-        map(response => true), // O token é válido, portanto, o usuário está autenticado
-        catchError(error => of(false)) // Ocorreu um erro na validação do token, portanto, o usuário não está autenticado
-      );
-    } else {
-      // Token não encontrado, o usuário não está autenticado
-      return of(false);
-    }
+    return !!token; // Retorna true se o token existir no cookie
   }
 
   setAuthToken(token: string): void {
-    // Armazene o token no cookie seguro
-    this.cookieService.set(this.tokenCookieName, token, null, '/', 'example.com', true, 'Strict');
+    const expires = new Date();
+    expires.setDate(expires.getDate() + 7);
+    this.cookieService.set(this.tokenCookieName, token, expires, '/', 'localhost', true, 'Strict');
   }
 
   removeAuthToken(): void {
-    // Remova o token do cookie
-    this.cookieService.delete(this.tokenCookieName, '/', 'example.com', true, 'Strict');
+    this.cookieService.delete(this.tokenCookieName, '/', 'localhost', true, 'Strict');
   }
 }
