@@ -36,10 +36,10 @@ export class AuthService {
   setAuthToken(token: string): void {
     const expires = new Date();
     expires.setDate(expires.getDate() + 7);
-    this.cookieService.set(this.tokenCookieName, token, expires, '/', 'https://front-secretaria-desenvolvimento-rural-jatai-gxpa6ujfg.vercel.app/', true, 'Strict');
+    this.cookieService.set(this.tokenCookieName, token, expires, '/', 'front-secretaria-desenvolvimento-rural-jatai.vercel.app', true, 'Strict');
   }
 
   removeAuthToken(): void {
-    this.cookieService.delete(this.tokenCookieName, '/', 'https://front-secretaria-desenvolvimento-rural-jatai-gxpa6ujfg.vercel.app/', true, 'Strict');
+    this.cookieService.delete(this.tokenCookieName, '/', 'front-secretaria-desenvolvimento-rural-jatai.vercel.app', true, 'Strict');
   }
 }
