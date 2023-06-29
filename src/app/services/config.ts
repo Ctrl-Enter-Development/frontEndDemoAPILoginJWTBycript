@@ -1,5 +1,5 @@
 export const environment = {
-    apiUrl: 'https://polar-stream-75434-ae90664990a9.herokuapp.com/api',
+    apiUrl: 'http://34.228.17.128/api',
     tokenCookieName: 'authToken'
   };
   
