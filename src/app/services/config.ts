@@ -1,5 +1,5 @@
 export const environment = {
-    apiUrl: 'http://34.228.17.128/api',
+    apiUrl: 'http://localhost:3333/api',
     tokenCookieName: 'authToken'
   };
   
