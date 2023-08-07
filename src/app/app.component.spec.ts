@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'front-Secretaria-Desenvolvimento-Rural-Jatai'`, () => {
+  it(`should have as title 'front-end-demo-api-login-jwt-bycript'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('front-Secretaria-Desenvolvimento-Rural-Jatai');
+    expect(app.title).toEqual('front-end-demo-api-login-jwt-bycript');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('front-Secretaria-Desenvolvimento-Rural-Jatai app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('front-end-demo-api-login-jwt-bycript app is running!');
   });
 });

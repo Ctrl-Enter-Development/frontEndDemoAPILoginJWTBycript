@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "front-Secretaria-Desenvolvimento-Rural-Jatai": {
+    "front-end-demo-api-login-jwt-bycript": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/front-secretaria-desenvolvimento-rural-jatai",
+            "outputPath": "dist/front-end-demo-api-login-jwt-bycript",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -71,10 +71,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "front-Secretaria-Desenvolvimento-Rural-Jatai:build:production"
+              "browserTarget": "front-end-demo-api-login-jwt-bycript:build:production"
             },
             "development": {
-              "browserTarget": "front-Secretaria-Desenvolvimento-Rural-Jatai:build:development"
+              "browserTarget": "front-end-demo-api-login-jwt-bycript:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -82,7 +82,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "front-Secretaria-Desenvolvimento-Rural-Jatai:build"
+            "browserTarget": "front-end-demo-api-login-jwt-bycript:build"
           }
         },
         "test": {

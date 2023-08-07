@@ -18,7 +18,7 @@ RUN npm run build
 FROM nginx
 
 # Copie os arquivos construídos do aplicativo Angular para a imagem do Nginx
-COPY --from=builder /app/dist/front-secretaria-desenvolvimento-rural-jatai /usr/share/nginx/html
+COPY --from=builder /app/dist/front-end-demo-api-login-jwt-bycript /usr/share/nginx/html
 
 # Copie o arquivo de configuração do Nginx para substituir o padrão
 COPY ./nginx.conf /etc/nginx/conf.d/default.conf

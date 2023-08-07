@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'front-Secretaria-Desenvolvimento-Rural-Jatai';
+  title = 'front-end-demo-api-login-jwt-bycript';
 }
